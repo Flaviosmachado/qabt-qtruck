@@ -72,12 +72,11 @@ describe('Avaliacao', () => {
             cy.get(`input[name=stars][value="${review.stars}"]`).click({force: true})
             cy.contains('button', 'Enviar avaliação').click()
 
-            cy.get('.details strong').contains(user.name)
-            cy.get('.details span').contains(user.instagram)
-            cy.get('.comment p').contains(review.comment)
-            cy.get('.stars').find('svg').should('have.length', 5)
+            cy.get('.details strong').should('have.text', user.name)
+            cy.get('.details span').should('have.text', user.instagram)
+            cy.get('.comment p').should('have.text' ,review.comment)
+            cy.get('.stars').find('svg').should('have.length', review.stars)
             
-
         })
 
     })
