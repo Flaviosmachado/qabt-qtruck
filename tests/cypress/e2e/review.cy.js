@@ -74,7 +74,7 @@ describe('Avaliacao', () => {
 
             cy.get('.details strong').should('have.text', user.name)
             cy.get('.details span').should('have.text', user.instagram)
-            cy.get('.comment p').should('have.text' ,review.comment)
+            cy.get('.comment p').should('have.text', review.comment)
             cy.get('.stars').find('svg').should('have.length', review.stars)
             
         })
